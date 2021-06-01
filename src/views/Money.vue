@@ -2,45 +2,6 @@
   <div class="nav-wrapper">
     <div class="content">
       Money.vue
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
-      <p>fdfd</p>
     </div>
     <Nav/>
   </div>
