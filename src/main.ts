@@ -3,9 +3,10 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'//相当于./router/index.ts
 import store from './store'
+import Nav from '@/components/Nav.vue';
 
 Vue.config.productionTip = false
-
+Vue.component('Nav',Nav)
 new Vue({
   router,
   store,
