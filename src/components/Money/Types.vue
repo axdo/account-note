@@ -7,36 +7,38 @@
   </div>
 </template>
 
-<script lang="js">
-export default {
-  name: 'Types',
-  props:['xxx'],
-  mounted() {
-    console.log(this.xxx)
-  },
-  data(){
-    return{
-      type:'-' //'-'表示支出 ‘+’表示收入
+<script lang="ts">
+import Vue from 'vue';
+import {Component} from 'vue-property-decorator';
+
+@Component
+export default class Types extends Vue {
+  type  = '-';
+
+ 
+
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  selectType(type: string) {//type只能是‘-’和‘+’中的一个
+    if (type !== '-' && type !== '+') {
+      throw new Error('type is unknown');
     }
-  },
-  methods:{
-    selectType(type){//type只能是‘-’和‘+’中的一个
-      if(type !== '-' && type !=='+'){
-        throw new Error('type is unknown')
-      }
-      this.type = type
-    }
+    this.type = type;
   }
-};
+
+  
+
+}
+
 </script>
 
 <style lang="scss" scoped>
-.types{
+.types {
   background: #c4c4c4;
   display: flex;
   font-size: 24px;
   text-align: center;
-  > li{
+
+  > li {
     width: 50%;
     height: 64px;
     display: flex;
@@ -46,8 +48,8 @@ export default {
     //&.selected{
     //  background: #aaaaaa;//自己设计
     //}
-    &.selected::after{
-      content:'';
+    &.selected::after {
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
