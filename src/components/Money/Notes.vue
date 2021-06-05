@@ -13,7 +13,7 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 
 @Component
-export default class Note extends Vue{
+export default class Notes extends Vue{
   value = '';
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   onInput(event){
