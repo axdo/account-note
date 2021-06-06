@@ -28,7 +28,7 @@ import {Component} from 'vue-property-decorator';
 export default class NumberPad extends Vue {
   output = '0';
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  inputContent(event){
+  inputContent(event:MouseEvent){
     const button = (event.target as HTMLButtonElement);
     const input = button.textContent!;//! 表示一定不为null
     if (this.output.length === 16){
