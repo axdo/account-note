@@ -70,7 +70,6 @@ export default class Statistics extends Vue {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   get groupedList() {
     const {recordList} = this;
-
     const newList = clone(recordList).filter(r=>r.type===this.type).sort((a,b)=>dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf())
     if (newList.length === 0){return [];}
     // eslint-disable-next-line no-undef

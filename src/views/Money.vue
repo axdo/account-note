@@ -51,6 +51,7 @@ export default class Money extends Vue {
     this.record.notes = value;
   }
 
+
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   saveRecord() {
     if (!this.record.tags|| this.record.tags.length===0){
