@@ -1,5 +1,6 @@
 type RecordItem = {
     tags:Tag[],
+    createRecordError:Error|null,
     notes:string,
     type:string,
     amount:number //数据类型
