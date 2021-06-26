@@ -31,23 +31,27 @@ import Tabs from '@/components/Tabs.vue';
 })
 export default class Money extends Vue {
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   get recordList() {
     return this.$store.state.recordList;
   }
 
   recordTypeList= recordTypeList;
   // eslint-disable-next-line no-undef
-  record: RecordItem = {tags: [], notes: '', type: '-', amount: 0};
+  record: RecordItem = {tags: [], notes: '', type: '-', amount: 0, createRecordError:null};
 
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   created(){
     this.$store.commit('fetchRecords')
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   onUpdateNotes(value: string) {
     this.record.notes = value;
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   saveRecord() {
     if (!this.record.tags|| this.record.tags.length===0){
       return window.alert('请至少选择一个标签');
