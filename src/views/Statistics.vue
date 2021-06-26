@@ -34,20 +34,19 @@ import recordTypeList from '@/constants/recordTypeList';
 import dayjs from 'dayjs';
 import clone from '@/lib/clone';
 
-const api = dayjs();
-console.log(api);
 
-const oneDay = 86400 * 1000;
+
 @Component({
   components: {Tabs},
 })
 export default class Statistics extends Vue {
-  // eslint-disable-next-line no-undef
+  // eslint-disable-next-line no-undef,@typescript-eslint/explicit-module-boundary-types
   tagString(tags:Tag[]){
     return tags.length===0?'无':tags.map(t=>t.name).join(',');
   }
 
-  beautify(string){
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  beautify(string:string){
     const day = dayjs(string);
     const now = dayjs();
     if(day.isSame(now,'day')){
@@ -62,20 +61,19 @@ export default class Statistics extends Vue {
       return day.format('YYYY年M月D日');
     }
   }
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   get recordList() {
     // eslint-disable-next-line no-undef
     return (this.$store.state as RootState).recordList;
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   get groupedList() {
     const {recordList} = this;
 
-
     const newList = clone(recordList).filter(r=>r.type===this.type).sort((a,b)=>dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf())
     if (newList.length === 0){return [];}
-    // eslint-disable-next-line no-undef
-    type Result ={title:string,total?:number,items:RecordItem[]}[]
-    const result = [{title:dayjs(newList[0].createdAt).format('YYYY-MM-DD'),items:[recordList[0]]}];
+    const result = [{title:dayjs(newList[0].createdAt).format('YYYY-MM-DD'),items:[newList[0]]}];
     for (let i = 1;i<newList.length;i++){
       const current = newList[i];
       const last = result[result.length-1];
@@ -91,6 +89,7 @@ export default class Statistics extends Vue {
     return result;
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   beforeCreate() {
     this.$store.commit('fetchRecords');
   }
